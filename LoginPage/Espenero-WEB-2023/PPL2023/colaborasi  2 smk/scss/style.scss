@@ -1,0 +1,251 @@
+/******* Bootstrap Theming ********/
+
+$primary: #FDAC53;
+$secondary: #131313;
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+);
+
+$font-family-sans-serif: 'Raleway', sans-serif;
+
+$body-color: #4A4A4A;
+
+$headings-color: $secondary;
+
+$enable-responsive-font-sizes: true;
+
+$enable-rounded: false;
+
+@import "bootstrap/scss/bootstrap";
+
+
+/********** Template CSS ************/
+h1,
+.font-weight-black {
+    font-weight: 900 !important;
+}
+
+h2,
+.font-weight-bolder {
+    font-weight: 800 !important;
+}
+
+h3,
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+
+h4,
+.font-weight-semi-bold {
+    font-weight: 600 !important;
+}
+
+h5
+.font-weight-medium {
+    font-weight: 500 !important;
+}
+
+h6,
+.font-weight-normal {
+    font-weight: 400 !important;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+}
+
+@media (min-width: 992px) {
+    .nav-bar {
+        position: absolute;
+        z-index: 999;
+    }
+
+    .nav-bar .navbar {
+        background: none !important;
+    }
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    padding: 30px 15px;
+    color: #ffffff;
+    font-weight: 600;
+    outline: none;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: $primary;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-dark .navbar-nav .nav-link {
+        padding: 10px 0px;
+    }
+}
+
+.carousel-caption {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: left;
+    background: rgba(0, 0, 0, .7);
+    z-index: 1;
+}
+
+.carousel-fade .carousel-item {
+    opacity: 0;
+    transition-duration: .6s;
+    transition-property: opacity;
+}
+
+.carousel-fade .carousel-item.active,
+.carousel-fade .carousel-item-next.carousel-item-left,
+.carousel-fade .carousel-item-prev.carousel-item-right {
+    opacity: 1;
+}
+
+.carousel-fade .active.carousel-item-left,
+.carousel-fade .active.carousel-item-right {
+    opacity: 0;
+}
+
+.carousel-fade .carousel-item-next,
+.carousel-fade .carousel-item-prev,
+.carousel-fade .carousel-item.active,
+.carousel-fade .active.carousel-item-left,
+.carousel-fade .active.carousel-item-prev {
+    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
+}
+
+.carousel-indicators {
+    width: 60px;
+    top: 0;
+    right: calc(100% - 60px);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-indicators li {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    opacity: 1;
+}
+
+.carousel-indicators .active {
+    background-color: $primary;
+}
+
+@media (max-width: 991.98px) {
+    .carousel-indicators {
+        width: 45px;
+        right: calc(100% - 45px);
+    }
+
+    .carousel-indicators li {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .carousel-caption h5 {
+        font-size: 16px;
+    }
+
+    .carousel-caption h1 {
+        font-size: 30px;
+        font-weight: 700 !important;
+    }
+}
+
+.page-header {
+    height: 400px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/header.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 991.98px) {
+    .page-header {
+        height: 300px;
+    }
+}
+
+.testimonial-text::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    bottom: -20px;
+    left: 30px;
+    border: 10px solid;
+    border-color: #ffffff transparent transparent transparent;
+    z-index: 2;
+}
+
+.testimonial-text::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    bottom: -24px;
+    left: 28px;
+    border: 12px solid;
+    border-color: #dee2e6 transparent transparent transparent;
+    z-index: 1;
+}
+
+.team-carousel .owl-dots,
+.testimonial-carousel .owl-dots {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.team-carousel .owl-dot,
+.testimonial-carousel .owl-dot {
+    display: inline-block;
+    margin: 0 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background: #dddddd;
+}
+
+.team-carousel .owl-dot.active,
+.testimonial-carousel .owl-dot.active {
+    background: $primary;
+}
+
+.team-item .team-overlay {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    background: rgb(109 103 171 / 70%);
+    border: 15px solid #ffffff;
+    transition: .5s;
+}
+
+.team-item:hover .team-overlay {
+    opacity: 1;
+}
+
+.contact-form .help-block ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
